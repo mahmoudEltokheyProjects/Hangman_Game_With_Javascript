@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hangman Game</title>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+        <!-- Style Css -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <!-- ============================= Game Info ============================= -->
+            <div class="game-info">
+                <!-- ++++++++++++++++++ Game Name ++++++++++++++++++ -->
+                <div class="game-name">Hangman Game</div>
+                <!-- ++++++++++++++ Category Name ++++++++++++++++++ -->
+                <!-- بتحدد التصنيف اللي الكلمة بتنتمي ليه -->
+                <!-- categories : "famous characters" , "science factions" , ... -->
+                <div class="category">
+                    Word From: <span></span> 
+                </div>
+            </div>
+            <!-- ============================= line separator ============================= -->
+            <hr>
+            <!-- ============================= Hangman Draw ============================= -->
+            <div class="row">
+                <div class="hangman-draw">
+                    <!-- The Hangman Draw -->
+                    <div class="the-draw">
+                        <!-- The Stand of Draw -->
+                        <div class="the-stand"></div>
+                        <!-- The Hang of Draw -->
+                        <div class="the-hang">
+
+                        </div>
+                        <!-- The Rope of Draw -->
+                        <div class="the-rope">
+
+                        </div>
+                        <!-- The Man of Draw -->
+                        <div class="the-man">
+                            <!-- Man Head -->
+                            <div class="head"></div>
+                            <!-- Man Body -->
+                            <div class="body"></div>
+                            <!-- Man Hands -->
+                            <div class="hands"></div>
+                            <!-- Man Legs -->
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- All Letters -->
+                <div class="letters">
+
+                </div>
+                <!-- line separator -->
+                <hr>
+            </div>
+            <!-- ============================= letters that you will guess ============================= -->
+            <div class="letters-guess">
+                
+            </div>
+        </div>
+        <!-- ============================= Audio Files ============================= -->
+        <!-- +++++++++++++++ During Game ++++++++++++++++ -->
+        <audio id="success" src="sounds/success.mp3" preload="auto"></audio>
+        <audio id="fail" src="sounds/fail.mp3" preload="auto"></audio>
+        <!-- +++++++++++++++ Finishing Game ++++++++++++++++ -->
+        <audio id="win" src="sounds/win.mp3" preload="auto"></audio>
+        <audio id="failure" src="sounds/failure.mp3" preload="auto"></audio>
+        <!-- ============================= Win Message ============================= -->
+        <div class="popup hide">
+            <div class="cryingImg hideImg">
+                <img src='imgs/cry.gif' alt='image' />
+            </div>
+            <div class="happyImg hideImg">
+                <img src='imgs/celebration.gif' alt='image' />
+            </div>
+            <p class="msg"></p>
+            <button class="restart-btn">restart</button>
+        </div>
+        <script src="js/script.js"></script>
+        <script src="js/confetti.js"></script>
+       <script>
+        
+       </script>
+    </body>
+</html>

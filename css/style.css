@@ -1,0 +1,454 @@
+/* ++++++++++++++++++++++++++++++++++++ Global Style ++++++++++++++++++++++++++++++++++++ */
+* , *::before , *::after
+{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box ;
+}
+/* ++++++++++++++++++++++++++++++++ Variables ++++++++++++++++++++++++++++++++ */
+:root
+{
+    --borderBottom : 4px solid #222 ;
+    --main-bk : #222 ;
+}
+body
+{
+    font-family: Tahoma , Arial , sans-serif;
+}
+.container
+{
+    width: 85% ;
+    margin: 20px auto ;
+    /* border: 5px solid #f00 ;  */
+}
+/* ++++++++++++++++++ Game info ++++++++++++++++++ */
+.game-info
+{
+    display: flex ;
+    /* border: 2px solid #f0f ;  */
+}
+/* /////// Game Name /////// */
+.game-info  .game-name
+{
+    /* flex : flex-grow flex-shrink flex-basis */
+    flex : 1 0 0 ;
+    /* border: 2px solid #0f0 ;  */
+
+}
+/* /////// Category Name /////// */
+.game-info  .category
+{
+    /* flex : flex-grow flex-shrink flex-basis */
+    flex : 1 0 0 ;
+    text-align: right;
+    /* border: 2px solid #00f ;  */
+}
+.game-info  .category   span
+{
+    text-transform: capitalize ;
+    color: #E91E63;
+    font-weight: bold ;
+}
+/* +++++++++++++ line separator ++++++++++++ */
+.container    hr
+{
+    display: block ;
+    margin-top: 20px ;
+    border: 2px solid #eee ;
+}
+/* ++++++++++++++++++ Row +++++++++++++++++ */
+.row
+{
+    display: flex ; 
+    margin: 20px 0 ;
+    /* border: 2px solid #0ff ;  */
+}
+/* //// The Hangman Container //////// */
+.hangman-draw
+{
+    /* flex : flex-grow flex-shrink flex-basis */
+    flex : 1 0 0 ;
+    background-color: #f8f8f8f8 ;
+    padding: 20px ;
+    height: 324px ;
+}
+/* ////// The Man ///// */
+.hangman-draw  .the-draw
+{
+    position: relative;
+    width: 60px ;
+    height: 280px ;
+    margin: 0 auto ;
+    border-bottom: var(--borderBottom) ;
+    /* I will Hide All "hangman" parts and I will Appear each part of "hangman" using "wrong" classes which added to "hangman-draw" element */
+    display: none ;
+}
+/* When "hangman-draw" has class "wrong-1" , Appear "the-draw" */
+.hangman-draw.wrong-1  .the-draw
+{
+    display: block ;
+}
+/* //////// The Stand ////// */
+.hangman-draw  .the-draw .the-stand
+{
+    position: absolute;
+    left: 50% ;
+    margin-left: -2px ;
+    width: 4px ;
+    height: 100% ;
+    background-color: var(--main-bk);
+    /* I will Hide All "hangman" parts and I will Appear each part of "hangman" using "wrong" classes which added to "hangman-draw" element */
+    display: none ;
+}
+/* When "hangman-draw" has class "wrong-2" , Appear "the-stand" */
+.hangman-draw.wrong-2  .the-stand
+{
+    display: block ;
+}
+/* //////// The Hang  ////// */
+.hangman-draw  .the-draw .the-hang
+{
+    /* I will Hide All "hangman" parts and I will Appear each part of "hangman" using "wrong" classes which added to "hangman-draw" element */
+    display: none ; 
+}
+/* When "hangman-draw" has class "wrong-3" , Appear "the-hang" */
+.hangman-draw.wrong-3  .the-hang
+{
+    display: block ;
+}
+/* //////// The Hang ::before ////// */
+.hangman-draw  .the-draw .the-hang::before
+{
+    content: "";
+    position: absolute;
+    left: 30px ;
+    top: 15px ;
+    width: 100px ;
+    height: 4px ;
+    background-color: var(--main-bk);
+}
+/* //////// The Hang ::after  ////// */
+.hangman-draw  .the-draw .the-hang::after
+{
+    content: "" ;
+    position: absolute;
+    left: 128px ;
+    top: 15px ;
+    width: 4px ;
+    height: 30px ;
+    background-color: var(--main-bk);
+}
+/* //////// The Rope  ////// */
+.hangman-draw  .the-draw .the-rope
+{
+    position: absolute;
+    left: 98px ;
+    top: 45px ;
+    width: 70px ;
+    height: 70px ;
+    border: 4px dashed var(--main-bk);
+    border-radius: 50% ;
+    -webkit-border-radius: 50% ;
+    -moz-border-radius: 50% ;
+    -ms-border-radius: 50% ;
+    -o-border-radius: 50% ;
+     /* I will Hide All "hangman" parts and I will Appear each part of "hangman" using "wrong" classes which added to "hangman-draw" element */
+     display: none ;
+}
+/* When "hangman-draw" has class "wrong-4" , Appear "the-rope" */
+.hangman-draw.wrong-4  .the-rope
+{
+    display: block ;
+}
+/* //////// The Man : Head  ////// */
+.hangman-draw  .the-draw .the-man  .head
+{
+    position: absolute;
+    top: 55px ;
+    left: 108px ;
+    width: 50px ;
+    height: 50px ;
+    border: 4px solid #222 ;
+    border-radius: 50% ;
+    -webkit-border-radius: 50% ;
+    -moz-border-radius: 50% ;
+    -ms-border-radius: 50% ;
+    -o-border-radius: 50% ;
+    /* I will Hide All "hangman" parts and I will Appear each part of "hangman" using "wrong" classes which added to "hangman-draw" element */
+    display: none ;
+}
+/* When "hangman-draw" has class "wrong-5" , Appear "head" */
+.hangman-draw.wrong-5   .the-man    .head
+{
+    display: block ;
+}
+/* //////// The Man : Body  ////// */
+.hangman-draw  .the-draw .the-man  .body
+{
+    position: absolute;
+    top: 102px ;
+    left: 130px ;
+    width: 4px ;
+    height: 110px ;
+    background-color: var(--main-bk);  
+    /* I will Hide All "hangman" parts and I will Appear each part of "hangman" using "wrong" classes which added to "hangman-draw" element */
+    display: none ;
+}
+/* When "hangman-draw" has class "wrong-6" , Appear "body" */
+.hangman-draw.wrong-6   .the-man    .body
+{
+    display: block ;
+}
+/* //////// The Man : hands ////// */
+.hangman-draw  .the-draw .the-man  .hands
+{
+    /* I will Hide All "hangman" parts and I will Appear each part of "hangman" using "wrong" classes which added to "hangman-draw" element */
+    display: none ;
+}
+/* When "hangman-draw" has class "wrong-7" , Appear "hands" */
+.hangman-draw.wrong-7 .the-man   .hands
+{
+    display: block ;
+}
+/* //////// The Man : hands ::before ==> Left Hand ////// */
+/* //////// The Man : hands ::after  ==> Right Hand ////// */
+.hangman-draw  .the-draw .the-man  .hands::before ,
+.hangman-draw  .the-draw .the-man  .hands::after
+{
+    content: "" ;
+    position: absolute;
+    top: 140px ;
+    width: 50px ;
+    height: 4px ;
+    background-color: var(--main-bk);
+}
+/* //////// The Man : hands ::before ==> Left Hand ////// */
+.hangman-draw  .the-draw .the-man  .hands::before
+{
+    left: 85px ;
+    transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+}
+/* //////// The Man : hands ::after ==> Right Hand ////// */
+.hangman-draw  .the-draw .the-man  .hands::after
+{
+    left: 130px ;
+    transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+}
+/* //////// The Man : Legs  ////// */
+.hangman-draw  .the-draw .the-man  .legs
+{
+    /* I will Hide All "hangman" parts and I will Appear each part of "hangman" using "wrong" classes which added to "hangman-draw" element */
+    display: none ;
+}
+/* When "hangman-draw" has class "wrong-8" , Appear "legs" */
+.hangman-draw.wrong-8 .the-man .legs
+{
+    display: block ;
+}
+/* //////// The Man : Legs ::before ==> Left Leg ////// */
+/* //////// The Man : Legs ::after  ==> Right Leg ////// */
+.hangman-draw  .the-draw .the-man  .legs::before ,
+.hangman-draw  .the-draw .the-man  .legs::after
+{
+    content: "" ;
+    position: absolute;
+    top: 220px ;
+    width: 50px ;
+    height: 4px ;
+    background-color: var(--main-bk);
+}
+/* //////// The Man : hands ::before ==> Left Legs ////// */
+.hangman-draw  .the-draw .the-man  .legs::before
+{
+    left: 85px ;
+    transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+}
+/* //////// The Man : hands ::after ==> Right Hand ////// */
+.hangman-draw  .the-draw .the-man  .legs::after
+{
+    left: 130px ;
+    transform: rotate( 30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+}
+/* ############################# Responsive ############################# */
+@media (min-width:0px) and (max-width:1000px)
+{
+    .row
+    {
+        flex-direction: column;
+    }   
+    .hangman-draw ,
+    .letters
+    {
+        flex-basis: 100% ;
+    }
+}
+/* ////// All Letters ////// */
+.letters 
+{
+    flex: 1 0 0 ;
+    padding: 15px ;
+    text-align: center ;
+}
+/* When "error Attempts" = 8 , Prevent User from Clicking on Any Letter , Add class "finished" to "letters Container" */
+.letters.finished
+{
+    pointer-events: none ;
+}
+.letters    .letter-box
+{
+    display: inline-block;
+    width: 55px ;
+    height: 55px ;
+    color: #fff ;
+    font-size: 24px ;
+    margin-bottom: 10px ;
+    margin-right: 10px ;
+    line-height: 55px ;
+    text-transform: uppercase ;
+    font-weight: bold ;
+    cursor: pointer;
+    background-color: #009688 ;
+}
+/* clicked letter */
+.letters    .letter-box.clicked 
+{
+    background-color: var(--main-bk);
+    opacity: 0.2 ;
+    /* prevent click on "letter" */
+    pointer-events: none ;
+}
+/* ////// letters that you will guess ////// */
+.letters-guess
+{
+    display: flex;
+    justify-content: center ;
+    min-height: 104px ;
+    margin: 10px auto ;
+    background-color: #f8f8f8 ;
+}
+.letters-guess  span
+{
+    width: 60px ;
+    height: 60px ;
+    line-height: 60px ;
+    margin-right: 10px ;
+    text-align: center ;
+    font-size: 24px ;
+    text-transform: uppercase;
+    font-weight: bold ;
+    background-color: #FDFDFD ;
+    border-bottom: 3px solid #222 ;
+    transition: 3s ;
+    -webkit-transition: 3s ;
+    -moz-transition: 3s ;
+    -ms-transition: 3s ;
+    -o-transition: 3s ;
+}
+/* "empty span" style */
+.letters-guess  span.with-space
+{
+    position: relative;
+    background: none ;
+    border-bottom: none ;
+}
+.letters-guess  span.with-space::before
+{
+    content: "" ;
+    position: absolute ;
+    left: 50% ;
+    top: 50% ;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    background-color: #222;
+    width: 20px ;
+    height: 4px ;
+}
+/* +++++++++++++++++++++++++ "endGame Popup" +++++++++++++++++++++++++ */
+.popup
+{
+    position: fixed;
+    top: 0% ;
+    left: 0% ;
+    width: 100% ;
+    height: 100% ;
+    line-height: 100% ;
+    font-size: 40px ;
+    padding: 220px 20px ; 
+    text-align: center ;
+    color: #fff ;
+    /* border: 2px solid #f00 ; */
+    background-color: rgba(0, 0, 0, 0.8);
+    
+}
+.popup.hide
+{
+    display: none ;
+}
+.restart-btn
+{
+    display: block ;
+    width: 150px ;
+    margin: 20px auto ;
+    padding: 10px 0px ;
+    background-color: #009688;
+    color: #fff ;
+    text-align: center ;
+    text-transform: capitalize;
+    font-size: 20px;
+    border: none ;
+    outline: none ;
+    cursor: pointer;
+    border-radius: 20px ;
+    -webkit-border-radius: 20px ;
+    -moz-border-radius: 20px ;
+    -ms-border-radius: 20px ;
+    -o-border-radius: 20px ;
+    transition: all 0.3s ease-in-out ;
+    -webkit-transition: all 0.3s ease-in-out ;
+    -moz-transition: all 0.3s ease-in-out ;
+    -ms-transition: all 0.3s ease-in-out ;
+    -o-transition: all 0.3s ease-in-out ;
+}
+.restart-btn:hover
+{
+    background-color: brown;
+}
+/* ++++++++++++++++ crying image +++++++++++++++++++ */
+.cryingImg ,
+.happyImg
+{
+   width: 150px ;
+   height: 150px ;
+   margin: 0px auto ;
+   /* border: 2px solid #f00 ; */
+}
+.cryingImg.hideImg ,
+.happyImg.hideImg
+{
+    display: none ;
+}
+.cryingImg  img ,
+.happyImg   img
+{
+    width: 100% ;
+    height: 100% ;
+}
